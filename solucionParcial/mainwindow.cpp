@@ -6,9 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    scene = new QGraphicsScene(0,0,1000,600);
+    scene = new QGraphicsScene(0,0,1200,500);
     ui->graphicsView->setScene(scene);
-    disparo=new Proyectil(100,100);
+    disparo=new Proyectil(100,100,0,500);
     scene->addItem(disparo);
 }
 
