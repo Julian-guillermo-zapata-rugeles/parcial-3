@@ -35,9 +35,11 @@ void Movimientos::setProyectil_en_movimiento(bool value)
 
 void Movimientos::configurarProyectil(short int velocidad_instantanea_ , short int angulo_ , short int posx , short int posy)
 {
+    this->proyectil_en_movimiento=true;
     this->posicion_x=posx;
     this->posicion_y=posy;
     this->angulo = angulo_;
+    this->tiempo_transcurrido=0;
     this->velocidad_instantanea=velocidad_instantanea_;
     velocidad_x = velocidad_instantanea * cos((angulo_*3.1416)/180);
     velocidad_y = velocidad_instantanea * sin((angulo_*3.1416)/180);

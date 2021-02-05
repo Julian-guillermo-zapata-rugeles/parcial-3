@@ -30,7 +30,7 @@ void CanonOfensivo::setAnguloDisparo(signed short value)
 
 
 
-void CanonOfensivo::calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y)
+bool CanonOfensivo::calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y)
 {
     //this->posicion_x = pos().x();
     //this->posicion_y = pos().x();
@@ -38,21 +38,33 @@ void CanonOfensivo::calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y)
         // mager para grados de 1 a 180
         for(unsigned short int velocidadProyectil=1; velocidadProyectil<100;velocidadProyectil++){
             // margen para velocidad 1 a 100
+            qDebug()<<"prueba para "<<gradosInclinacion <<"grados con "<<velocidad_instantanea<<" velocidad " << endl;
             bool exahustedSearch = false;
-            configurarProyectil(velocidad_instantanea,gradosInclinacion,pos().x(),pos().y());
+            lastPosition=pos().y();
+            configurarProyectil(velocidadProyectil,gradosInclinacion,pos().x(),pos().y());
             while (exahustedSearch==false) {
                 // se trazará una trayectoria ficticia que permitirá obtener coordenadas de avace
+                qDebug()<< "pos x : "<<posicion_x<<" pos y :"<<posicion_y<< endl;
+                if(posicion_y>=500){
+                    return true;
+                    exahustedSearch=true;
+                }
+                else{
+                    moverParabolicamente();
+                }
 
             }
+
         }
     }
+    return false;
 }
 
 
 
 
 CanonOfensivo::CanonOfensivo(short posx, short posy)
-    :Canon(posx,posy),Movimientos(500,0)
+    :Canon(posx,posy),Movimientos(600,0)
 {
     proyectil_fue_disparado=false;
     anguloDisparo=80;

@@ -2,6 +2,7 @@
 #define CANONOFENSIVO_H
 #include "canon.h"
 #include "movimientos.h"
+#include "QDebug"
 
 class CanonOfensivo : public Canon , public Movimientos
 {
@@ -17,11 +18,12 @@ public:
     signed short getAnguloDisparo() const;
 
     void setAnguloDisparo(signed short value);
+    bool calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y);
 
 private:
     bool proyectil_fue_disparado;
     signed short int anguloDisparo;
-    void calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y);
+
 
 };
 

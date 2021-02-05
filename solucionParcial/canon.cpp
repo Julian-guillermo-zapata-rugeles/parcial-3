@@ -5,6 +5,7 @@ Canon::Canon(unsigned short posx, unsigned short posy)
 {
     this->setRect(0,0,50,50);
     this->setPos(posx,posy-this->boundingRect().height());
+
 }
 
 void Canon::subir()
@@ -31,3 +32,4 @@ void Canon::disparoLibre()
 {
     scene()->addItem(new Proyectil(50,50,this->pos().x(),this->pos().y()));
 }
+

@@ -10,12 +10,13 @@ class Canon : public QGraphicsRectItem
 public:
     Canon(unsigned short int posx , unsigned short int posy);
 
-public:
+    // métodos
     void subir();
     void bajar();
     void izquierda();
     void derecha();
     void disparoLibre();
+
 };
 
 #endif // CANON_H
