@@ -5,7 +5,9 @@
 class Movimientos
 {
 public:
-    Movimientos();
+    Movimientos(short int limite_inferior);
+
+
 protected:
 
     // --------------------- Atributos de la clase Heredables --------------------------------//
@@ -16,8 +18,11 @@ protected:
 
     // ---------------------  Métodos de la clase Heredables  -------------------------------//
 
-    void configurarProyectil();
+    void configurarProyectil(short velocidad_instantanea, short angulo);
     void moverParabolicamente();
+
+    bool getProyectil_en_movimiento() const;
+    void setProyectil_en_movimiento(bool value);
 };
 
 #endif // MOVIMIENTOS_H
