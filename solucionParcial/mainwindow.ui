@@ -154,6 +154,45 @@
      <string>O</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="subir_grados">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>570</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>angulo +</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bajar_grados">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>570</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>angulo -</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="visor_angulo">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>570</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

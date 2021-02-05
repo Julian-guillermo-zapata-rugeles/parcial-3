@@ -9,7 +9,7 @@ Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const
     this->setPos(Movimientos::posicion_x,Movimientos::posicion_y+this->rect().height());
     this->eventController = new QTimer;
     connect(eventController,SIGNAL(timeout()),this,SLOT(actions()));
-    this->eventController->start(20);
+    this->eventController->start(50);
 
 
 }
