@@ -27,6 +27,17 @@ void CanonOfensivo::setAnguloDisparo(signed short value)
     anguloDisparo = value;
 }
 
+
+
+
+void CanonOfensivo::calcularTrayectorias()
+{
+
+}
+
+
+
+
 CanonOfensivo::CanonOfensivo(short posx, short posy):Canon(posx,posy)
 {
     proyectil_fue_disparado=false;
