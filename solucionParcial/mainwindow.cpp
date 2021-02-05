@@ -52,8 +52,8 @@ void MainWindow::on_btn_izquierda_clicked()
 
 void MainWindow::on_btn_fuego_clicked()
 {
-     //Canon_ofensivo->disparoLibre();
-    Canon_ofensivo->calcularTrayectorias(0,0);
+     Canon_ofensivo->disparoLibre();
+    //Canon_ofensivo->calcularTrayectorias(0,0);
 }
 
 // --------------- COMANDOS PARA EL CAÑON #2 ----------------------//

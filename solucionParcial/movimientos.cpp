@@ -13,6 +13,7 @@ Movimientos::Movimientos(short limite_inferior_, short last, bool reverse_factor
     this->proyectil_en_movimiento=false;
     this->lastPosition=last;
     this->tiempo_transcurrido=0;
+    this->intervaloSuma=0.2;
 }
 
 
@@ -25,6 +26,16 @@ bool Movimientos::getProyectil_en_movimiento() const
 void Movimientos::setProyectil_en_movimiento(bool value)
 {
     proyectil_en_movimiento = value;
+}
+
+bool Movimientos::comprobarCercania(float x, float y)
+{
+    if(abs(x-posicion_x)<100 && abs(y-posicion_y)<100){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 
@@ -63,7 +74,7 @@ void Movimientos::moverParabolicamente()
              posicion_x=posicion_x+velocidad_x;
         }
 
-        tiempo_transcurrido=tiempo_transcurrido+0.2;
+        tiempo_transcurrido=tiempo_transcurrido+intervaloSuma;
         if(posicion_y>limite_inferior){
             proyectil_en_movimiento=false;
             posicion_y=limite_inferior;

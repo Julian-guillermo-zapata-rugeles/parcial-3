@@ -40,17 +40,30 @@ bool CanonOfensivo::calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y)
             // margen para velocidad 1 a 100
             qDebug()<<"prueba para "<<gradosInclinacion <<"grados con "<<velocidad_instantanea<<" velocidad " << endl;
             bool exahustedSearch = false;
+
+
+            // CONFIGURACIONES PARA LA TRAYECTORIA
             lastPosition=pos().y();
+            intervaloSuma=0.2;
             configurarProyectil(velocidadProyectil,gradosInclinacion,pos().x(),pos().y());
+            //---------------------------------
+
+
             while (exahustedSearch==false) {
                 // se trazará una trayectoria ficticia que permitirá obtener coordenadas de avace
-                qDebug()<< "pos x : "<<posicion_x<<" pos y :"<<posicion_y<< endl;
-                if(posicion_y>=500){
-                    return true;
+                //qDebug()<< "pos x : "<<posicion_x<<" pos y :"<<posicion_y<< endl;
+                if(posicion_y>=550){
                     exahustedSearch=true;
+
                 }
                 else{
                     moverParabolicamente();
+                    if(comprobarCercania(enemy_pos_x,enemy_pos_y)){
+                        return true;
+                        anguloImpacto=gradosInclinacion;
+                        velocidadImpacto=velocidadProyectil;
+                        qDebug ()<< "se encontró que el angulo "<< anguloImpacto << " y velocidad "<<velocidadImpacto << "es la trayectoria indicada "<<endl;
+                    }
                 }
 
             }

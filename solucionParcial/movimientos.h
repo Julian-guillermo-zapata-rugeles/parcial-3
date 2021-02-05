@@ -12,7 +12,7 @@ protected:
 
     // --------------------- Atributos de la clase Heredables --------------------------------//
     bool proyectil_en_movimiento , reverse ;
-    float velocidad_x , velocidad_y , tiempo_transcurrido , posicion_y , posicion_x , lastPosition;
+    float velocidad_x , velocidad_y , tiempo_transcurrido , posicion_y , posicion_x , lastPosition , intervaloSuma;
     short int velocidad_instantanea , angulo, limite_inferior;
 
 
@@ -23,6 +23,7 @@ protected:
 
     bool getProyectil_en_movimiento() const;
     void setProyectil_en_movimiento(bool value);
+    bool comprobarCercania(float x,float y);
 };
 
 #endif // MOVIMIENTOS_H
