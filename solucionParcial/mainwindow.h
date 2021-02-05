@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include "proyectil.h"
+#include <canon.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +22,6 @@ public:
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
-    Proyectil *disparo;
+    Canon *CanonOfensivo;
 };
 #endif // MAINWINDOW_H
