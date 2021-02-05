@@ -4,7 +4,7 @@
 Canon::Canon(unsigned short posx, unsigned short posy)
 {
     this->setRect(0,0,50,50);
-    this->setPos(50,500-this->boundingRect().height());
+    this->setPos(posx,posy-this->boundingRect().height());
 }
 
 void Canon::subir()

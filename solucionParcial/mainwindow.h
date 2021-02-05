@@ -31,6 +31,16 @@ private slots:
 
     void on_btn_fuego_clicked();
 
+    void on_btn_subir_2_clicked();
+
+    void on_btn_izquierda_2_clicked();
+
+    void on_btn_derecha_2_clicked();
+
+    void on_btn_bajar_2_clicked();
+
+    void on_btn_fuego_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
