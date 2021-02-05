@@ -5,14 +5,14 @@
 class Movimientos
 {
 public:
-    Movimientos(short int limite_inferior);
+    Movimientos(short int limite_inferior,short int last);
 
 
 protected:
 
     // --------------------- Atributos de la clase Heredables --------------------------------//
     bool proyectil_en_movimiento;
-    float velocidad_x , velocidad_y , tiempo_transcurrido , posicion_y , posicion_x;
+    float velocidad_x , velocidad_y , tiempo_transcurrido , posicion_y , posicion_x , lastPosition;
     short int velocidad_instantanea , angulo, limite_inferior;
 
 

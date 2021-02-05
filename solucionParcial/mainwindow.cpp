@@ -37,3 +37,8 @@ void MainWindow::on_btn_izquierda_clicked()
 {
     CanonOfensivo->izquierda();
 }
+
+void MainWindow::on_btn_fuego_clicked()
+{
+    CanonOfensivo->disparoLibre();
+}

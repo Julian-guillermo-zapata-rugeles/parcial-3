@@ -13,6 +13,7 @@ public:
     void bajar();
     void izquierda();
     void derecha();
+    void disparoLibre();
 };
 
 #endif // CANON_H

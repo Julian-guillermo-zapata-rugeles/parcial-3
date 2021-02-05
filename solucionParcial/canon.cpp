@@ -9,20 +9,25 @@ Canon::Canon(unsigned short posx, unsigned short posy)
 
 void Canon::subir()
 {
-    this->setPos(pos().x(),pos().y()-5);
+    this->setPos(pos().x(),pos().y()-10);
 }
 
 void Canon::bajar()
 {
-    this->setPos(pos().x(),pos().y()+5);
+    this->setPos(pos().x(),pos().y()+10);
 }
 
 void Canon::izquierda()
 {
-    this->setPos(pos().x()-5,pos().y());
+    this->setPos(pos().x()-10,pos().y());
 }
 
 void Canon::derecha()
 {
-    this->setPos(pos().x()+5,pos().y());
+    this->setPos(pos().x()+10,pos().y());
+}
+
+void Canon::disparoLibre()
+{
+    scene()->addItem(new Proyectil(50,50,this->pos().x(),this->pos().y()));
 }

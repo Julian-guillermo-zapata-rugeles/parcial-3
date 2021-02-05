@@ -17,6 +17,7 @@ public:
     ~Proyectil();
 private:
     QTimer *eventController;
+
 private slots:
     void actions();
 };

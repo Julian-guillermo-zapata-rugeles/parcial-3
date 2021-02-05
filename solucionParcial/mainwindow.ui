@@ -76,7 +76,7 @@
      <string>&lt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_derecha_2">
+   <widget class="QPushButton" name="btn_fuego">
     <property name="geometry">
      <rect>
       <x>130</x>

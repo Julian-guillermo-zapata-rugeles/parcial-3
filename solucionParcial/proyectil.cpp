@@ -1,15 +1,16 @@
 #include "proyectil.h"
 #include <QGraphicsScene>
 Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const, float pos_y_const):
-    Movimientos(500)
+    Movimientos(500,pos_y_const)
 {
     this->setRect(0,0,20,20);
     this->configurarProyectil(velocidad_instantanea, angle , pos_x_const , pos_y_const);
     this->proyectil_en_movimiento=true;
-    this->setPos(Movimientos::posicion_x,Movimientos::posicion_y-this->rect().height());
+    this->setPos(Movimientos::posicion_x,Movimientos::posicion_y+this->rect().height());
     this->eventController = new QTimer;
     connect(eventController,SIGNAL(timeout()),this,SLOT(actions()));
     this->eventController->start(20);
+
 
 }
 
