@@ -5,7 +5,13 @@
 class CanonOfensivo : public Canon
 {
 public:
+    bool proyectil_fue_disparado;
     CanonOfensivo(short int posx, short int posy);
+
+
+    // ------------------ metodos setter y getter --------------------- //
+    bool getProyectil_fue_disparado() const;
+    void setProyectil_fue_disparado(bool value);
 };
 
 #endif // CANONOFENSIVO_H
