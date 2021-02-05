@@ -34,8 +34,9 @@ bool CanonOfensivo::calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y)
 {
     //this->posicion_x = pos().x();
     //this->posicion_y = pos().x();
-    for(unsigned short int gradosInclinacion = 1 ; gradosInclinacion < 180 ; gradosInclinacion++){
+    for(unsigned short int gradosInclinacion = 1 ; gradosInclinacion < 90 ; gradosInclinacion++){
         // mager para grados de 1 a 180
+        //qDebug()<<" buscando en "<<gradosInclinacion << " grados "<<endl;
         for(unsigned short int velocidadProyectil=1; velocidadProyectil<100;velocidadProyectil++){
             // margen para velocidad 1 a 100
             qDebug()<<"prueba para "<<gradosInclinacion <<"grados con "<<velocidad_instantanea<<" velocidad " << endl;
@@ -44,7 +45,7 @@ bool CanonOfensivo::calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y)
 
             // CONFIGURACIONES PARA LA TRAYECTORIA
             lastPosition=pos().y();
-            intervaloSuma=0.2;
+            intervaloSuma=0.1;
             configurarProyectil(velocidadProyectil,gradosInclinacion,pos().x(),pos().y());
             //---------------------------------
 
@@ -58,18 +59,21 @@ bool CanonOfensivo::calcularTrayectorias(qreal enemy_pos_x, qreal enemy_pos_y)
                 }
                 else{
                     moverParabolicamente();
+                    // BUG PARA SOLUCIONAR -- EL CICLO SE DETIENE //
+                    /*
                     if(comprobarCercania(enemy_pos_x,enemy_pos_y)){
                         return true;
                         anguloImpacto=gradosInclinacion;
                         velocidadImpacto=velocidadProyectil;
                         qDebug ()<< "se encontró que el angulo "<< anguloImpacto << " y velocidad "<<velocidadImpacto << "es la trayectoria indicada "<<endl;
-                    }
+                    }*/
                 }
 
             }
 
         }
     }
+    qDebug()<<" se acabó la busqueda " << endl;
     return false;
 }
 

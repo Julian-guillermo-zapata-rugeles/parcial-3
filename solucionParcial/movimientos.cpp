@@ -30,7 +30,7 @@ void Movimientos::setProyectil_en_movimiento(bool value)
 
 bool Movimientos::comprobarCercania(float x, float y)
 {
-    if(abs(x-posicion_x)<100 && abs(y-posicion_y)<100){
+    if(abs(x-posicion_x)<200 && abs(y-posicion_y)<200){
         return true;
     }
     else{
