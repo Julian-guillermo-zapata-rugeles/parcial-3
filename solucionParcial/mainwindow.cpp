@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setScene(scene);
     Canon_ofensivo = new CanonOfensivo(50,500);
     Canon_defensivo = new CanonDefensivo(1100,500);
+    ChivoExpiatorio = new Espia(Canon_ofensivo,Canon_defensivo);
     scene->addItem(Canon_defensivo);
     scene->addItem(Canon_ofensivo);
 }
