@@ -1,11 +1,11 @@
 #ifndef CANONDEFENSIVO_H
 #define CANONDEFENSIVO_H
+#include <canon.h>
 
-
-class CanonDefensivo
+class CanonDefensivo : public Canon
 {
 public:
-    CanonDefensivo();
+    CanonDefensivo(short int posx, short int posy);
 };
 
 #endif // CANONDEFENSIVO_H

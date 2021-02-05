@@ -1,6 +1,6 @@
 #include "proyectil.h"
 #include <QGraphicsScene>
-Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const, float pos_y_const):
+Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const, float pos_y_const, bool reverse):
     Movimientos(500,pos_y_const)
 {
     this->setRect(0,0,20,20);

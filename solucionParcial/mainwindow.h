@@ -5,6 +5,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <canonofensivo.h>
+#include <canondefensivo.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -34,5 +35,6 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
     CanonOfensivo * Canon_ofensivo;
+    CanonDefensivo * Canon_defensivo;
 };
 #endif // MAINWINDOW_H

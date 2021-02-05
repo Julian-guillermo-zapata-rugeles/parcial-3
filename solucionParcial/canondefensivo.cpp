@@ -1,6 +1,6 @@
 #include "canondefensivo.h"
 
-CanonDefensivo::CanonDefensivo()
+CanonDefensivo::CanonDefensivo(short posx, short posy):Canon(posx,posy)
 {
 
 }

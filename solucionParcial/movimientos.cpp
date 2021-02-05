@@ -3,8 +3,9 @@
 
 
 
-Movimientos::Movimientos(short limite_inferior_, short last)
+Movimientos::Movimientos(short limite_inferior_, short last, bool reverse_factor)
 {
+    this->reverse = reverse_factor;
     this->posicion_x=0;
     this->posicion_y=0;
     this->angulo=0;
@@ -54,7 +55,12 @@ void Movimientos::moverParabolicamente()
 
     if(proyectil_en_movimiento==true){
         posicion_y=lastPosition - float(0+velocidad_y*tiempo_transcurrido+(0.5*(-9.8*tiempo_transcurrido*tiempo_transcurrido)));
-        posicion_x=posicion_x+velocidad_x;
+        if(reverse==true){
+             posicion_x=posicion_x-velocidad_x;
+        }else{
+             posicion_x=posicion_x+velocidad_x;
+        }
+
         tiempo_transcurrido=tiempo_transcurrido+0.2;
         if(posicion_y>limite_inferior){
             proyectil_en_movimiento=false;

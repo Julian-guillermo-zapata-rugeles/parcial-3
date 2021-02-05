@@ -13,7 +13,7 @@ class Proyectil : public QObject , public QGraphicsRectItem , public Movimientos
 {
     Q_OBJECT
 public:
-    Proyectil(short int velocidad_instantanea, short int angulo , float posicion_x , float posicion_y);
+    Proyectil(short int velocidad_instantanea, short int angulo , float posicion_x , float posicion_y , bool reverse = false);
     ~Proyectil();
 private:
     QTimer *eventController;
