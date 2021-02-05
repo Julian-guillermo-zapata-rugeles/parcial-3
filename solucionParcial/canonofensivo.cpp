@@ -13,7 +13,7 @@ void CanonOfensivo::setProyectil_fue_disparado(bool value)
 
 void CanonOfensivo::disparoLibre()
 {
-    scene()->addItem(new Proyectil(50,50,this->pos().x(),this->pos().y()));
+    scene()->addItem(new Proyectil(100,85,this->pos().x(),this->pos().y()));
     proyectil_fue_disparado=true;
 }
 
