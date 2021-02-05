@@ -1,15 +1,21 @@
 #include "proyectil.h"
-
-Proyectil::Proyectil(short velocidad_instantanea, short angulo, float posicion_x_, float posicion_y_):
+#include <QGraphicsScene>
+Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const, float pos_y_const):
     Movimientos(500)
 {
-    this->configurarProyectil(velocidad_instantanea,angulo , posicion_x_ , posicion_y_);
-    this->proyectil_en_movimiento=true;
     this->setRect(0,0,20,20);
-    this->setPos(posicion_x_,posicion_y_-this->rect().height());
+    this->configurarProyectil(velocidad_instantanea, angle , pos_x_const , pos_y_const);
+    this->proyectil_en_movimiento=true;
+    this->setPos(Movimientos::posicion_x,Movimientos::posicion_y-this->rect().height());
     this->eventController = new QTimer;
     connect(eventController,SIGNAL(timeout()),this,SLOT(actions()));
     this->eventController->start(20);
+
+}
+
+Proyectil::~Proyectil()
+{
+ scene()->removeItem(this);
 
 }
 
@@ -18,6 +24,8 @@ void Proyectil::actions()
 
     if(proyectil_en_movimiento==true){
         this->moverParabolicamente();
-        this->setPos(this->pos().x(),posicion_y);
+        this->setPos(Movimientos::posicion_x,Movimientos::posicion_y);
+    }else{
+        delete this;
     }
 }

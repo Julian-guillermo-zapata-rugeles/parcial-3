@@ -1,6 +1,5 @@
 #include "movimientos.h"
-
-
+#include <QDebug>
 
 
 
@@ -28,12 +27,17 @@ void Movimientos::setProyectil_en_movimiento(bool value)
 
 
 
-void Movimientos::configurarProyectil(short int velocidad_instantanea , short int angulo , short int posx , short int posy)
+void Movimientos::configurarProyectil(short int velocidad_instantanea_ , short int angulo_ , short int posx , short int posy)
 {
     this->posicion_x=posx;
     this->posicion_y=posy;
-    velocidad_x = velocidad_instantanea * cos((angulo*3.1416)/180);
-    velocidad_y = velocidad_instantanea * sin((angulo*3.1416)/180);
+    this->angulo = angulo_;
+    this->velocidad_instantanea=velocidad_instantanea_;
+    velocidad_x = velocidad_instantanea * cos((angulo_*3.1416)/180);
+    velocidad_y = velocidad_instantanea * sin((angulo_*3.1416)/180);
+
+    qDebug() <<" posicion X : "<<posicion_x << " posicion Y : "<< posicion_y << endl;
+    qDebug() <<" velocidad X : "<<velocidad_x << " velocidad Y : "<< velocidad_y << endl;
 }
 
 
@@ -46,7 +50,7 @@ void Movimientos::moverParabolicamente()
     if(proyectil_en_movimiento==true){
         posicion_y=limite_inferior - float(0+velocidad_y*tiempo_transcurrido+(0.5*(-9.8*tiempo_transcurrido*tiempo_transcurrido)));
         posicion_x=posicion_x+velocidad_x;
-        tiempo_transcurrido=tiempo_transcurrido+0.1;
+        tiempo_transcurrido=tiempo_transcurrido+0.2;
         if(posicion_y>limite_inferior){
             proyectil_en_movimiento=false;
             posicion_y=limite_inferior;
