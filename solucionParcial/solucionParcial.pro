@@ -10,10 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    movimientos.cpp \
+    proyectil.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    movimientos.h \
+    proyectil.h
 
 FORMS += \
     mainwindow.ui
