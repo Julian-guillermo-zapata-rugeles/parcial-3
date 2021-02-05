@@ -9,9 +9,11 @@ public:
     CanonOfensivo(short int posx, short int posy);
 
 
+
     // ------------------ metodos setter y getter --------------------- //
     bool getProyectil_fue_disparado() const;
     void setProyectil_fue_disparado(bool value);
+    void disparoLibre(); // método que será redefinido (se hereda igualmente desde canon)
 };
 
 #endif // CANONOFENSIVO_H

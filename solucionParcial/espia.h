@@ -16,6 +16,11 @@ private:
     QTimer *controladorEventos;
     CanonOfensivo *ptr_canon_ofensivo;
     CanonDefensivo *ptr_canon_defensivo;
+    short int intervalo_adv_defensivo;
+    short int intervalo_adv_ofensivo;
+
+    bool  ofensiveRuntimeService();
+    bool  defensiveRuntimeService();
 
 private slots:
     void actions();

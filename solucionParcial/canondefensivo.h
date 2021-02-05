@@ -7,6 +7,7 @@ class CanonDefensivo : public Canon
 public:
     CanonDefensivo(short int posx, short int posy);
     void disparoLibre();
+
 };
 
 #endif // CANONDEFENSIVO_H
