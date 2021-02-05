@@ -9,6 +9,8 @@ class Canon : public QGraphicsRectItem
 {
 public:
     Canon(unsigned short int posx , unsigned short int posy);
+
+public:
     void subir();
     void bajar();
     void izquierda();

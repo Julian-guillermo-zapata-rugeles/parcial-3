@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <canon.h>
+#include <canonofensivo.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -33,6 +33,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
-    Canon *CanonOfensivo;
+    CanonOfensivo * Canon_ofensivo;
 };
 #endif // MAINWINDOW_H

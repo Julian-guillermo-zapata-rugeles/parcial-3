@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     canon.cpp \
+    canonofensivo.cpp \
     main.cpp \
     mainwindow.cpp \
     movimientos.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     canon.h \
+    canonofensivo.h \
     mainwindow.h \
     movimientos.h \
     proyectil.h
