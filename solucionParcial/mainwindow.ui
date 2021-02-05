@@ -28,26 +28,26 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>580</y>
+      <y>570</y>
       <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>subir</string>
+     <string>^</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_bajar">
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>640</y>
+      <y>650</y>
       <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>bajar</string>
+     <string>_</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_derecha">
@@ -60,7 +60,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>derecha</string>
+     <string>&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_izquierda">
@@ -73,7 +73,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>izquierda</string>
+     <string>&lt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_derecha_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>610</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>O</string>
     </property>
    </widget>
   </widget>

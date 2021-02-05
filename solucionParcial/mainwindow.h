@@ -19,6 +19,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_btn_subir_clicked();
+
+    void on_btn_bajar_clicked();
+
+    void on_btn_derecha_clicked();
+
+    void on_btn_izquierda_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;

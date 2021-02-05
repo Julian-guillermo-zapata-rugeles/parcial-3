@@ -17,3 +17,23 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_btn_subir_clicked()
+{
+    CanonOfensivo->subir();
+}
+
+void MainWindow::on_btn_bajar_clicked()
+{
+    CanonOfensivo->bajar();
+}
+
+void MainWindow::on_btn_derecha_clicked()
+{
+    CanonOfensivo->derecha();
+}
+
+void MainWindow::on_btn_izquierda_clicked()
+{
+    CanonOfensivo->izquierda();
+}
