@@ -1,5 +1,7 @@
 #include "proyectil.h"
 #include <QGraphicsScene>
+
+
 Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const, float pos_y_const, bool reverse):
     Movimientos(500,pos_y_const,reverse)
 {
@@ -19,7 +21,7 @@ Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const
 Proyectil::~Proyectil()
 {
     scene()->removeItem(this);
-
+    qDebug()<<"destructor aliado"<<endl;
 }
 
 void Proyectil::actions()
@@ -35,15 +37,19 @@ void Proyectil::actions()
         delete this;
     }
 
+
     QList<QGraphicsItem *> elementosColisionables  = collidingItems() ;
     for(int i=0;i< elementosColisionables.size();i++){
         // balas que colisionan con los enemigos
-        if(typeid (*(elementosColisionables[i]))== typeid (Proyectil)){
-            //scene()->removeItem(elementosColisionables[i]);
+        if(typeid (*(elementosColisionables[i])) == typeid (ProyectilEnemigo)){
+            delete this;
             delete elementosColisionables[i];
+            //delete elementosColisionables[i];
+            //qDebug()<<" colisionaron los objetos "<<endl;
             break;
         }
     }
+
 }
 
 /*

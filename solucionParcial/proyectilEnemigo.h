@@ -1,5 +1,5 @@
-#ifndef PROYECTIL_H
-#define PROYECTIL_H
+#ifndef ProyectilEnemigo_H
+#define ProyectilEnemigo_H
 
 #include <QObject>
 #include <QObject>
@@ -10,18 +10,17 @@
 #include <QVector>
 #include <QDebug>
 #include <persistencia.h>
-#include <proyectilEnemigo.h>
 
 
-class Proyectil : public QObject , public QGraphicsPixmapItem , public Movimientos
+
+class ProyectilEnemigo : public QObject , public QGraphicsPixmapItem , public Movimientos
 {
     Q_OBJECT
 public:
-    Proyectil(short int velocidad_instantanea, short int angulo , float posicion_x , float posicion_y , bool reverse = false);
-    ~Proyectil();
+    ProyectilEnemigo(short int velocidad_instantanea, short int angulo , float posicion_x , float posicion_y , bool reverse = false);
+    ~ProyectilEnemigo();
 protected:
     QTimer *eventController;
-    QVector <Proyectil *> im;
     short int min=0;
 
 protected slots:
@@ -33,4 +32,4 @@ public:
     //void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 };
 
-#endif // PROYECTIL_H
+#endif // ProyectilEnemigo_H

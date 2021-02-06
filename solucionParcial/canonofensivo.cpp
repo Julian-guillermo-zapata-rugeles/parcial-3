@@ -107,7 +107,8 @@ void CanonOfensivo::disparoCertero()
 {
     if(calcularTrayectorias()==true){
 
-        scene()->addItem(new Proyectil(velocidadImpacto,anguloImpacto,this->pos().x(),pos().y()));
+       //scene()->addItem(new Proyectil(0,0,0,false));
+        scene()->addItem(new ProyectilEnemigo(velocidadImpacto,anguloImpacto,pos().x(),pos().y()));
     }
     //if(calcularTrayectorias(){
     //    scene()->addItem(new Proyectil(velocidadImpacto,anguloImpacto,pos().x(),pos().y()));

@@ -19,7 +19,7 @@ SOURCES += \
     movimientos.cpp \
     persistencia.cpp \
     proyectil.cpp \
-    proyectilenemigo.cpp
+    proyectilEnemigo.cpp
 
 HEADERS += \
     canon.h \
@@ -31,7 +31,7 @@ HEADERS += \
     movimientos.h \
     persistencia.h \
     proyectil.h \
-    proyectilenemigo.h
+    proyectilEnemigo.h
 
 FORMS += \
     mainwindow.ui

@@ -17,7 +17,7 @@ void Persistencia::actions()
        delete this;
    }
    opacidad=opacidad-0.1;
-   setOpacity(opacidad);
+   //setOpacity(opacidad);
 }
 
 QRectF Persistencia::boundingRect() const

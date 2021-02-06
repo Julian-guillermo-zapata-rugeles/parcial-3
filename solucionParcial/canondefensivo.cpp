@@ -22,6 +22,7 @@ bool CanonDefensivo::alerta_disparo(qreal x, qreal y, short angle, short velocid
           moverParabolicamente();
           if(comprobarCercania(posicion_x,posicion_y,pos().x(),pos().y())==true){
               scene()->addItem(new Proyectil(velocidad_disparo,angle,this->pos().x(),this->pos().y(),true));
+              //scene()->addItem(new Proyectil(velocidad_disparo,angle,this->pos().x(),this->pos().y(),true));
               //disparoLibre();
           }
       }

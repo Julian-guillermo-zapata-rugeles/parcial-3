@@ -3,6 +3,7 @@
 #include "canon.h"
 #include "movimientos.h"
 #include "QDebug"
+#include <proyectilEnemigo.h>
 
 class CanonOfensivo : public Canon , public Movimientos
 {
