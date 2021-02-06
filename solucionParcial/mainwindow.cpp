@@ -52,8 +52,8 @@ void MainWindow::on_btn_izquierda_clicked()
 
 void MainWindow::on_btn_fuego_clicked()
 {
-     //Canon_ofensivo->disparoLibre();
-    Canon_ofensivo->calcularTrayectorias(1000,500);
+    Canon_ofensivo->disparoLibre();
+    //Canon_ofensivo->calcularTrayectorias(1000,500);
 }
 
 // --------------- COMANDOS PARA EL CAÑON #2 ----------------------//
@@ -98,4 +98,9 @@ void MainWindow::on_bajar_grados_clicked()
 {
     Canon_ofensivo->setAnguloDisparo(Canon_ofensivo->getAnguloDisparo()-1);
     ui->visor_angulo->setText(QString::number( Canon_ofensivo->getAnguloDisparo()));
+}
+
+void MainWindow::on_btn_fuego_3_clicked()
+{
+    Canon_ofensivo->disparoCertero();
 }

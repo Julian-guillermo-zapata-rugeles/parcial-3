@@ -23,7 +23,7 @@ protected:
 
     bool getProyectil_en_movimiento() const;
     void setProyectil_en_movimiento(bool value);
-    bool comprobarCercania(float x,float y);
+    bool comprobarCercania(float x, float y, float enemyx, float enemyy);
 };
 
 #endif // MOVIMIENTOS_H

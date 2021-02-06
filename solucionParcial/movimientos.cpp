@@ -28,12 +28,15 @@ void Movimientos::setProyectil_en_movimiento(bool value)
     proyectil_en_movimiento = value;
 }
 
-bool Movimientos::comprobarCercania(float x, float y)
+
+bool Movimientos::comprobarCercania(float x, float y , float enemyx , float enemyy)
 {
-    if(abs(x-posicion_x)<200 && abs(y-posicion_y)<200){
+    if(abs(x-enemyx)<40 && abs(y-enemyy)<40){
         return true;
     }
     else{
+        qDebug()<<x<<" + "<<enemyx<<" --> "<<y<<" + "<<enemyy << endl;
+        qDebug()<<abs(x-enemyx) <<" cercania  "<<abs(y-enemyy)<<endl;
         return false;
     }
 }
@@ -55,8 +58,8 @@ void Movimientos::configurarProyectil(short int velocidad_instantanea_ , short i
     velocidad_x = velocidad_instantanea * cos((angulo_*3.1416)/180);
     velocidad_y = velocidad_instantanea * sin((angulo_*3.1416)/180);
 
-    qDebug() <<" posicion X : "<<posicion_x << " posicion Y : "<< posicion_y << endl;
-    qDebug() <<" velocidad X : "<<velocidad_x << " velocidad Y : "<< velocidad_y << endl;
+    //qDebug() <<" posicion X : "<<posicion_x << " posicion Y : "<< posicion_y << endl;
+    //qDebug() <<" velocidad X : "<<velocidad_x << " velocidad Y : "<< velocidad_y << endl;
 }
 
 

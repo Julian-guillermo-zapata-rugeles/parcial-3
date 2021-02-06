@@ -16,6 +16,8 @@ Espia::Espia(CanonOfensivo *canon_ofensivo, CanonDefensivo *canon_defensivo)
 
 bool Espia::ofensiveRuntimeService()
 {
+    ptr_canon_ofensivo->setPosicionEnemigaX(ptr_canon_defensivo->pos().x());
+    ptr_canon_ofensivo->setPosicionEnemigaY(ptr_canon_defensivo->pos().y());
     if(ptr_canon_ofensivo->getProyectil_fue_disparado()==true){
         intervalo_adv_defensivo-=100;
     }
@@ -34,6 +36,5 @@ void Espia::actions()
     if(ofensiveRuntimeService()==true){
         ptr_canon_defensivo->disparoLibre();
         ptr_canon_ofensivo->setProyectil_fue_disparado(false); // restablezco nuevamente el estado
-        ptr_canon_ofensivo->calcularTrayectorias(0,0);
     }
 }
