@@ -13,8 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
     ChivoExpiatorio = new Espia(Canon_ofensivo,Canon_defensivo);
     scene->addItem(Canon_defensivo);
     scene->addItem(Canon_ofensivo);
+    Canon_ofensivo->setRotation(Canon_ofensivo->getAnguloDisparo()*-1);
     ui->visor_angulo->setText(QString::number( Canon_ofensivo->getAnguloDisparo()));
-    limiteDefensivo=new Delimitantes(Canon_defensivo->pos().x(),Canon_defensivo->pos().y());
+    limiteDefensivo=new Delimitantes(Canon_ofensivo->pos().x(),Canon_ofensivo->pos().y());
     scene->addItem(limiteDefensivo);
 
 }
@@ -90,17 +91,23 @@ void MainWindow::on_btn_fuego_2_clicked()
     Canon_defensivo->disparoLibre();
 }
 
+
+
+
+
 void MainWindow::on_subir_grados_clicked()
 {
     // para subir grados usaré un método setter de un atributo privado de el cañon ofensivo
     Canon_ofensivo->setAnguloDisparo(Canon_ofensivo->getAnguloDisparo()+1);
     ui->visor_angulo->setText(QString::number( Canon_ofensivo->getAnguloDisparo()));
+    Canon_ofensivo->setRotation(Canon_ofensivo->getAnguloDisparo()*-1);
 }
 
 void MainWindow::on_bajar_grados_clicked()
 {
     Canon_ofensivo->setAnguloDisparo(Canon_ofensivo->getAnguloDisparo()-1);
     ui->visor_angulo->setText(QString::number( Canon_ofensivo->getAnguloDisparo()));
+    Canon_ofensivo->setRotation(Canon_ofensivo->getAnguloDisparo()*-1);
 }
 
 void MainWindow::on_btn_fuego_3_clicked()

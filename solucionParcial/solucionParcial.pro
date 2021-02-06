@@ -18,7 +18,8 @@ SOURCES += \
     mainwindow.cpp \
     movimientos.cpp \
     persistencia.cpp \
-    proyectil.cpp
+    proyectil.cpp \
+    proyectilenemigo.cpp
 
 HEADERS += \
     canon.h \
@@ -29,7 +30,8 @@ HEADERS += \
     mainwindow.h \
     movimientos.h \
     persistencia.h \
-    proyectil.h
+    proyectil.h \
+    proyectilenemigo.h
 
 FORMS += \
     mainwindow.ui
@@ -38,3 +40,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    multimedia.qrc

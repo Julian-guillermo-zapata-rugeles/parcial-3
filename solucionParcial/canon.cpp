@@ -3,7 +3,8 @@
 
 Canon::Canon(unsigned short posx, unsigned short posy)
 {
-    this->setRect(0,0,50,50);
+    //this->setRect(0,0,50,50);
+    this->setPixmap(QPixmap(":/recursos/canon.png"));
     this->setPos(posx,posy-this->boundingRect().height());
     this->setTransformOriginPoint(this->boundingRect().center());
 

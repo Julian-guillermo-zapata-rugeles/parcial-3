@@ -6,7 +6,7 @@ Persistencia::Persistencia(qreal x, qreal y)
     this->setPos(x,y);
     time_life = new QTimer();
     connect(time_life,SIGNAL(timeout()),this,SLOT(actions()));
-    time_life->start(50);
+    time_life->start(80);
 }
 
 void Persistencia::actions()
@@ -27,6 +27,7 @@ QRectF Persistencia::boundingRect() const
 
 void Persistencia::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::yellow);
+    //painter->setBrush(Qt::yellow);
+    painter->setPen(Qt::NoBrush);
     painter->drawEllipse(boundingRect());
 }

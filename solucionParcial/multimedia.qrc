@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>recursos/canon.png</file>
+        <file>recursos/bala.png</file>
+    </qresource>
+</RCC>

@@ -12,7 +12,7 @@
 #include <persistencia.h>
 
 
-class Proyectil : public QObject , public QGraphicsRectItem , public Movimientos
+class Proyectil : public QObject , public QGraphicsPixmapItem , public Movimientos
 {
     Q_OBJECT
 public:
@@ -21,14 +21,15 @@ public:
 private:
     QTimer *eventController;
     QVector <Proyectil *> im;
+    short int min=0;
 
 private slots:
     void actions();
 
     // QGraphicsItem interface
 public:
-    QRectF boundingRect() const;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    //QRectF boundingRect() const;
+    //void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 };
 
 #endif // PROYECTIL_H

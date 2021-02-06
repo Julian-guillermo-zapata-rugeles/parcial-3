@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 
 
-class Canon : public QGraphicsRectItem
+class Canon : public QGraphicsPixmapItem
 {
 public:
     Canon(unsigned short int posx , unsigned short int posy);

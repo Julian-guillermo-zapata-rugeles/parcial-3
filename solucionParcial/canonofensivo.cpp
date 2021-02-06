@@ -90,6 +90,7 @@ bool CanonOfensivo::calcularTrayectorias()
                         velocidadImpacto=velocidadProyectil;
                         anguloImpacto=gradosInclinacion;
                         proyectil_fue_disparado=true;
+                        setRotation(anguloImpacto*-1);
                         return true;
                     }
                 }
@@ -106,7 +107,7 @@ void CanonOfensivo::disparoCertero()
 {
     if(calcularTrayectorias()==true){
 
-        scene()->addItem(new Proyectil(velocidadImpacto,anguloImpacto,pos().x(),pos().y()));
+        scene()->addItem(new Proyectil(velocidadImpacto,anguloImpacto,this->pos().x(),pos().y()));
     }
     //if(calcularTrayectorias(){
     //    scene()->addItem(new Proyectil(velocidadImpacto,anguloImpacto,pos().x(),pos().y()));
@@ -121,4 +122,5 @@ CanonOfensivo::CanonOfensivo(short posx, short posy)
 {
     proyectil_fue_disparado=false;
     anguloDisparo=80;
+    this->setTransformOriginPoint(this->boundingRect().center());
 }
