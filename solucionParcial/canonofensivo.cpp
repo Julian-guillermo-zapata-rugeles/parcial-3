@@ -35,6 +35,7 @@ void CanonOfensivo::disparoLibre()
 {
     scene()->addItem(new Proyectil(100,anguloDisparo,this->pos().x(),this->pos().y()));
     proyectil_fue_disparado=true;
+     explotar();
 }
 
 signed short CanonOfensivo::getAnguloDisparo() const
@@ -109,6 +110,7 @@ void CanonOfensivo::disparoCertero()
 
        //scene()->addItem(new Proyectil(0,0,0,false));
         scene()->addItem(new ProyectilEnemigo(velocidadImpacto,anguloImpacto,pos().x(),pos().y()));
+         explotar();
     }
     //if(calcularTrayectorias(){
     //    scene()->addItem(new Proyectil(velocidadImpacto,anguloImpacto,pos().x(),pos().y()));

@@ -36,7 +36,7 @@ private:
     bool proyectil_fue_disparado;
     signed short int anguloDisparo;
     qreal anguloImpacto , velocidadImpacto;
-    QMediaPlayer *sonido;
+
 
 
 };

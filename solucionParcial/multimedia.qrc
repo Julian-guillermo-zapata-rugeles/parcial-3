@@ -4,5 +4,7 @@
         <file>recursos/bala.png</file>
         <file>recursos/fondo.jpg</file>
         <file>recursos/castillo.png</file>
+        <file>recursos/explosion.mp3</file>
+        <file>recursos/gpws.mp3</file>
     </qresource>
 </RCC>

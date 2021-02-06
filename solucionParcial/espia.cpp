@@ -11,6 +11,8 @@ Espia::Espia(CanonOfensivo *canon_ofensivo, CanonDefensivo *canon_defensivo)
     controladorEventos->start(100);
     this->respuesta=false;
     this->multiple=false;
+    sonido= new QMediaPlayer();
+
 }
 
 void Espia::setMultiple(bool value)
@@ -56,6 +58,8 @@ bool Espia::ofensiveRuntimeService()
 void Espia::actions()
 {
     if(ofensiveRuntimeService()==true && respuesta==true){
+        sonido-> setMedia ( QUrl ( "qrc:/recursos/gpws.mp3" ));
+        sonido-> play();
         ptr_canon_defensivo->alerta_disparo(ptr_canon_ofensivo->pos().x(),
                                             ptr_canon_ofensivo->pos().y(),
                                             ptr_canon_ofensivo->getAnguloImpacto(),

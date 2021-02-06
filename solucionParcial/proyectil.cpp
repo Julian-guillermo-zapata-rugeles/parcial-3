@@ -2,6 +2,7 @@
 #include <QGraphicsScene>
 
 
+
 Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const, float pos_y_const, bool reverse):
     Movimientos(500,pos_y_const,reverse)
 {

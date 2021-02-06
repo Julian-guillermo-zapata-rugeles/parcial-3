@@ -7,7 +7,7 @@ Canon::Canon(unsigned short posx, unsigned short posy)
     this->setPixmap(QPixmap(":/recursos/canon.png"));
     this->setPos(posx,posy-this->boundingRect().height());
     this->setTransformOriginPoint(this->boundingRect().center());
-    sonido=new QMediaPlayer();
+    sonido= new QMediaPlayer();
 
 }
 
@@ -34,5 +34,17 @@ void Canon::derecha()
 void Canon::disparoLibre()
 {
     scene()->addItem(new Proyectil(50,50,this->pos().x(),this->pos().y()));
+}
+
+void Canon::explotar()
+{
+            sonido-> setMedia ( QUrl ( "qrc:/recursos/explosion.mp3" ));
+            sonido->play();
+}
+
+void Canon::alarma()
+{
+    sonido-> setMedia ( QUrl ( "qrc:/recursos/gpws.mp3" ));
+    sonido->play();
 }
 

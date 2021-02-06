@@ -8,6 +8,8 @@ CanonDefensivo::CanonDefensivo(short posx, short posy):Canon(posx,posy),Movimien
 void CanonDefensivo::disparoLibre()
 {
     scene()->addItem(new Proyectil(50,50,this->pos().x(),this->pos().y(),true));
+    explotar();
+
 }
 
 bool CanonDefensivo::alerta_disparo(qreal x, qreal y, short angle, short velocidad_disparo)
@@ -22,6 +24,7 @@ bool CanonDefensivo::alerta_disparo(qreal x, qreal y, short angle, short velocid
           moverParabolicamente();
           if(comprobarCercania(posicion_x,posicion_y,pos().x(),pos().y())==true){
               scene()->addItem(new Proyectil(velocidad_disparo,angle,this->pos().x(),this->pos().y(),true));
+               explotar();
               //scene()->addItem(new Proyectil(velocidad_disparo,angle,this->pos().x(),this->pos().y(),true));
               //disparoLibre();
           }

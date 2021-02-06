@@ -3,8 +3,7 @@
 #include <QGraphicsRectItem>
 #include <proyectil.h>
 #include <QGraphicsScene>
-
-
+#include <QMediaPlayer>
 class Canon : public QGraphicsPixmapItem
 {
 public:
@@ -16,6 +15,10 @@ public:
     void izquierda();
     void derecha();
     void disparoLibre();
+    void explotar();
+    void alarma();
+protected:
+    QMediaPlayer *sonido;
 
 };
 

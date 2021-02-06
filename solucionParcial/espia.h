@@ -24,6 +24,7 @@ private:
     short int intervalo_adv_ofensivo;
     bool multiple;
     bool respuesta;
+    QMediaPlayer *sonido;
     bool  ofensiveRuntimeService();
     bool  defensiveRuntimeService();
 
