@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>recursos/canon.png</file>
         <file>recursos/bala.png</file>
+        <file>recursos/fondo.jpg</file>
+        <file>recursos/castillo.png</file>
     </qresource>
 </RCC>

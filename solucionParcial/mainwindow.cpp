@@ -113,4 +113,18 @@ void MainWindow::on_bajar_grados_clicked()
 void MainWindow::on_btn_fuego_3_clicked()
 {
     Canon_ofensivo->disparoCertero();
+    ChivoExpiatorio->setRespuesta(false);
+}
+
+void MainWindow::on_btn_fuego_4_clicked()
+{
+    Canon_ofensivo->disparoCertero();
+    ChivoExpiatorio->setMultiple(true);
+    ChivoExpiatorio->setRespuesta(true);
+}
+
+void MainWindow::on_btn_fuego_5_clicked()
+{
+    Canon_ofensivo->disparoCertero();
+    ChivoExpiatorio->setRespuesta(true);
 }

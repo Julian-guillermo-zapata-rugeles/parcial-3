@@ -7,6 +7,7 @@ Canon::Canon(unsigned short posx, unsigned short posy)
     this->setPixmap(QPixmap(":/recursos/canon.png"));
     this->setPos(posx,posy-this->boundingRect().height());
     this->setTransformOriginPoint(this->boundingRect().center());
+    sonido=new QMediaPlayer();
 
 }
 

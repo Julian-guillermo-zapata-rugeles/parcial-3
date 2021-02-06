@@ -2,7 +2,7 @@
 
 CanonDefensivo::CanonDefensivo(short posx, short posy):Canon(posx,posy),Movimientos(600,0)
 {
-
+    setRotation(-100);
 }
 
 void CanonDefensivo::disparoLibre()

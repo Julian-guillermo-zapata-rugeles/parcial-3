@@ -23,6 +23,9 @@
       <height>550</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/recursos/fondo.jpg);</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="btn_subir">
     <property name="geometry">
@@ -196,20 +199,20 @@
    <widget class="QPushButton" name="btn_fuego_3">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>470</x>
       <y>570</y>
-      <width>91</width>
+      <width>211</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Disparo certero</string>
+     <string>Disparo certero / sin respuesta</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>720</x>
       <y>570</y>
       <width>16</width>
       <height>91</height>
@@ -220,6 +223,32 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_fuego_4">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>630</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Anular disparo defensa</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_fuego_5">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>600</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Disparo certero con posibilidad daño</string>
     </property>
    </widget>
   </widget>

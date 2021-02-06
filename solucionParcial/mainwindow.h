@@ -47,6 +47,8 @@ private slots:
     void on_subir_grados_clicked();
     void on_bajar_grados_clicked();
     void on_btn_fuego_3_clicked();
+    void on_btn_fuego_4_clicked();
+    void on_btn_fuego_5_clicked();
 };
 
 
