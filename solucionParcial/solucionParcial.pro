@@ -12,6 +12,7 @@ SOURCES += \
     canon.cpp \
     canondefensivo.cpp \
     canonofensivo.cpp \
+    delimitantes.cpp \
     espia.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     canon.h \
     canondefensivo.h \
     canonofensivo.h \
+    delimitantes.h \
     espia.h \
     mainwindow.h \
     movimientos.h \

@@ -5,6 +5,7 @@ Canon::Canon(unsigned short posx, unsigned short posy)
 {
     this->setRect(0,0,50,50);
     this->setPos(posx,posy-this->boundingRect().height());
+    this->setTransformOriginPoint(this->boundingRect().center());
 
 }
 

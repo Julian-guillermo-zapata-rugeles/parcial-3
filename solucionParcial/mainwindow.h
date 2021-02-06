@@ -7,6 +7,7 @@
 #include <canonofensivo.h>
 #include <canondefensivo.h>
 #include <espia.h>
+#include <delimitantes.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -29,6 +30,7 @@ private:
     CanonOfensivo * Canon_ofensivo;
     CanonDefensivo * Canon_defensivo;
     Espia * ChivoExpiatorio;
+    Delimitantes *limiteDefensivo;
 
 
 private slots:

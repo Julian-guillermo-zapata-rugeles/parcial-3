@@ -14,6 +14,9 @@ MainWindow::MainWindow(QWidget *parent)
     scene->addItem(Canon_defensivo);
     scene->addItem(Canon_ofensivo);
     ui->visor_angulo->setText(QString::number( Canon_ofensivo->getAnguloDisparo()));
+    limiteDefensivo=new Delimitantes(Canon_defensivo->pos().x(),Canon_defensivo->pos().y());
+    scene->addItem(limiteDefensivo);
+
 }
 
 MainWindow::~MainWindow()

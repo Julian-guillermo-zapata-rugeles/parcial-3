@@ -16,7 +16,7 @@ Proyectil::Proyectil(short velocidad_instantanea, short angle, float pos_x_const
 
 Proyectil::~Proyectil()
 {
- scene()->removeItem(this);
+    scene()->removeItem(this);
 
 }
 
@@ -31,11 +31,22 @@ void Proyectil::actions()
         qDebug()<<"proyectil salió de pantalla "<<endl;
         delete this;
     }
+    QList<QGraphicsItem *> elementosColisionables  = collidingItems() ;
+
+    for(int i=0;i< elementosColisionables.size();i++){
+        // balas que colisionan con los enemigos
+        if(typeid (*(elementosColisionables[i]))==typeid (Proyectil)){
+            //scene()->removeItem(elementosColisionables[i]);
+            delete elementosColisionables[i];
+            break;
+        }
+    }
 }
+
 
 QRectF Proyectil::boundingRect() const
 {
-     return QRectF(0,0,20,20);
+    return QRectF(0,0,20,20);
 }
 
 void Proyectil::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
