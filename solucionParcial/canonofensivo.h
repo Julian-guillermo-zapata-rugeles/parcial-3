@@ -26,6 +26,10 @@ public:
 
     void setPosicionEnemigaY(const qreal &value);
 
+    qreal getAnguloImpacto() const;
+
+    qreal getVelocidadImpacto() const;
+
 private:
     bool proyectil_fue_disparado;
     signed short int anguloDisparo;

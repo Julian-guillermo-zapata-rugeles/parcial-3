@@ -34,7 +34,11 @@ bool Espia::ofensiveRuntimeService()
 void Espia::actions()
 {
     if(ofensiveRuntimeService()==true){
-        ptr_canon_defensivo->disparoLibre();
+        ptr_canon_defensivo->alerta_disparo(ptr_canon_ofensivo->pos().x(),
+                                            ptr_canon_ofensivo->pos().y(),
+                                            ptr_canon_ofensivo->getAnguloImpacto(),
+                                            ptr_canon_ofensivo->getVelocidadImpacto());
+
         ptr_canon_ofensivo->setProyectil_fue_disparado(false); // restablezco nuevamente el estado
     }
 }

@@ -6,7 +6,10 @@
 #include <QTimer>
 #include <QGraphicsRectItem>
 #include "movimientos.h"
-
+#include <QPainter>
+#include <QVector>
+#include <QDebug>
+#include <persistencia.h>
 
 
 class Proyectil : public QObject , public QGraphicsRectItem , public Movimientos
@@ -17,9 +20,15 @@ public:
     ~Proyectil();
 private:
     QTimer *eventController;
+    QVector <Proyectil *> im;
 
 private slots:
     void actions();
+
+    // QGraphicsItem interface
+public:
+    QRectF boundingRect() const;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 };
 
 #endif // PROYECTIL_H

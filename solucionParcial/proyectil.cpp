@@ -26,7 +26,20 @@ void Proyectil::actions()
     if(proyectil_en_movimiento==true){
         this->moverParabolicamente();
         this->setPos(Movimientos::posicion_x,Movimientos::posicion_y);
+        scene()->addItem(new Persistencia(posicion_x,posicion_y));
     }else{
+        qDebug()<<"proyectil salió de pantalla "<<endl;
         delete this;
     }
+}
+
+QRectF Proyectil::boundingRect() const
+{
+     return QRectF(0,0,20,20);
+}
+
+void Proyectil::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    painter->setBrush(Qt::yellow);
+    painter->drawEllipse(boundingRect());
 }

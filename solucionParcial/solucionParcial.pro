@@ -16,6 +16,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     movimientos.cpp \
+    persistencia.cpp \
     proyectil.cpp
 
 HEADERS += \
@@ -25,6 +26,7 @@ HEADERS += \
     espia.h \
     mainwindow.h \
     movimientos.h \
+    persistencia.h \
     proyectil.h
 
 FORMS += \

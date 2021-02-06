@@ -16,6 +16,16 @@ void CanonOfensivo::setPosicionEnemigaY(const qreal &value)
     posicionEnemigaY = value;
 }
 
+qreal CanonOfensivo::getAnguloImpacto() const
+{
+    return anguloImpacto;
+}
+
+qreal CanonOfensivo::getVelocidadImpacto() const
+{
+    return velocidadImpacto;
+}
+
 void CanonOfensivo::setPosicionEnemigaX(const qreal &value)
 {
     posicionEnemigaX = value;
@@ -47,9 +57,9 @@ bool CanonOfensivo::calcularTrayectorias()
     for(unsigned short int gradosInclinacion = 89 ; gradosInclinacion > 1 ; gradosInclinacion--){
         // mager para grados de 1 a 180
         //qDebug()<<" buscando en "<<gradosInclinacion << " grados "<<endl;
-        for(unsigned short int velocidadProyectil=130; velocidadProyectil>5;velocidadProyectil--){
+        for(unsigned short int velocidadProyectil=80; velocidadProyectil>5;velocidadProyectil--){
             // margen para velocidad 1 a 100
-            qDebug()<<"prueba para "<<gradosInclinacion <<"grados con "<<velocidad_instantanea<<" velocidad " << endl;
+            //qDebug()<<"prueba para "<<gradosInclinacion <<"grados con "<<velocidad_instantanea<<" velocidad " << endl;
             bool exahustedSearch = false;
 
 
@@ -75,11 +85,11 @@ bool CanonOfensivo::calcularTrayectorias()
                         //return true;
                         //anguloImpacto=gradosInclinacion;
                         //velocidadImpacto=velocidadProyectil;
-                        qDebug ()<< "se encontró que el angulo "<< gradosInclinacion << " y velocidad "<<velocidadProyectil << "es la trayectoria indicada "<<endl;
-                        qDebug() << posicionEnemigaX << " + " << posicionEnemigaY << " --> "<< posicion_x << " + "<< posicion_y << endl;
+                        //qDebug ()<< "se encontró que el angulo "<< gradosInclinacion << " y velocidad "<<velocidadProyectil << "es la trayectoria indicada "<<endl;
+                        //qDebug() << posicionEnemigaX << " + " << posicionEnemigaY << " --> "<< posicion_x << " + "<< posicion_y << endl;
                         velocidadImpacto=velocidadProyectil;
                         anguloImpacto=gradosInclinacion;
-                        scene()->addItem(new Proyectil(velocidadProyectil,anguloImpacto,pos().x(),pos().y()));
+                        proyectil_fue_disparado=true;
                         return true;
                     }
                 }
@@ -94,7 +104,10 @@ bool CanonOfensivo::calcularTrayectorias()
 
 void CanonOfensivo::disparoCertero()
 {
-    calcularTrayectorias();
+    if(calcularTrayectorias()==true){
+
+        scene()->addItem(new Proyectil(velocidadImpacto,anguloImpacto,pos().x(),pos().y()));
+    }
     //if(calcularTrayectorias(){
     //    scene()->addItem(new Proyectil(velocidadImpacto,anguloImpacto,pos().x(),pos().y()));
     //}

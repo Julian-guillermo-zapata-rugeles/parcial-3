@@ -31,12 +31,12 @@ void Movimientos::setProyectil_en_movimiento(bool value)
 
 bool Movimientos::comprobarCercania(float x, float y , float enemyx , float enemyy)
 {
-    if(abs(x-enemyx)<40 && abs(y-enemyy)<40){
+    if(abs(x-enemyx)<20 && abs(y-enemyy)<20){
         return true;
     }
     else{
-        qDebug()<<x<<" + "<<enemyx<<" --> "<<y<<" + "<<enemyy << endl;
-        qDebug()<<abs(x-enemyx) <<" cercania  "<<abs(y-enemyy)<<endl;
+       // qDebug()<<x<<" + "<<enemyx<<" --> "<<y<<" + "<<enemyy << endl;
+        //qDebug()<<abs(x-enemyx) <<" cercania  "<<abs(y-enemyy)<<endl;
         return false;
     }
 }
